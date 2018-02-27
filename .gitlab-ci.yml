@@ -1,7 +1,7 @@
 pages:
   stage: deploy
   script: 
-  - echo 'Nothing to do ...'
+  - echo 'Nothing to do...'
   artifacts:
     paths:
     - public
