@@ -91,6 +91,7 @@ def save_model_file(file_name, output_content):
 def create_meta():
     for file_name, query_string in FILES_TO_CREATE.iteritems():
         response = requests.get(MODEL_CATALOG_URL + query_string)
+        logging.info('Response code %s', response)
         models_list = response.json()['models']
         logging.info('Fetching %s', file_name)
         if not _check_models_modification(models_list, file_name):
