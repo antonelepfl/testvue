@@ -96,7 +96,7 @@ def create_meta():
         print(response)
         models_list = response.json()
         print(models_list)
-        models_list = response.json()['models']
+        # models_list = response.json()['models']
         logging.info('Fetching %s', file_name)
         if not _check_models_modification(models_list, file_name):
             continue # avoid creation
