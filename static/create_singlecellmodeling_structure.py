@@ -32,6 +32,8 @@ def get_id_list(models_list):
 
 def _check_models_modification(new_models, file_name):
     new_models_ids = get_id_list(new_models)
+    print('new models')
+    print(new_models_ids)
     old_model = None
     # new_text = list(sorted(new_text))
     if os.path.isfile(OLD_LIST_NAME):
@@ -41,7 +43,9 @@ def _check_models_modification(new_models, file_name):
         if file_name in old_model and old_model[file_name] == new_models_ids:
             logging.info('%s was not modified', file_name)
             return False
-
+    else:
+        print('no old file')
+        print(OLD_LIST_NAME)
     logging.info('%s list was changed', file_name)
 
     # create or update file to compare next time
@@ -58,6 +62,9 @@ def _check_models_modification(new_models, file_name):
 def filter_meta(model_info):
     fields_to_save = ('name', 'author', 'cell_type', 'brain_region', 'species', 'description')
     x = {k: model_info[k] for k in fields_to_save}
+
+    instance_to_zip = model_info['instances'][0]['source']
+    x['zip_url'] = instance_to_zip
     return x
 
 
@@ -89,18 +96,13 @@ def save_model_file(file_name, output_content):
 
 
 def create_meta():
-    print('create metadata')
     for file_name, query_string in FILES_TO_CREATE.iteritems():
         response = requests.get(MODEL_CATALOG_URL + query_string)
-        logging.info('Response code %s', response)
-        print(response)
-        models_list = response.json()
-        print(models_list)
-        # models_list = response.json()['models']
+        models_list = response.json()['models']
         logging.info('Fetching %s', file_name)
         if not _check_models_modification(models_list, file_name):
             continue # avoid creation
-        
+
         output_content = []
         for model in models_list:
             model_name = model['name']
@@ -123,5 +125,5 @@ def main():
 
 
 if __name__ == '__main__':
-    logging.basicConfig(level=logging.INFO)
+    logging.basicConfig(level=logging.DEBUG)
     main()
