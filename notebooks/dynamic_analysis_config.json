@@ -1,6 +1,6 @@
 [
   {
-    "name": "test_name",
+    "name": "sp6mooc",
     "uri": "https://raw.githubusercontent.com/antonelepfl/testvue/master/notebooks/analysis_mnt_mooc.ipynb",
     "txtToReplace": "SIMULATION_URL"
   },
