@@ -1,14 +1,12 @@
 [
   {
-    "analysisName": "test_name",
-    "notebookUrl": "https://raw.githubusercontent.com/antonelepfl/testvue/master/notebooks/analysis_mnt_mooc.ipynb",
-    "navItemName": "test_navitem",
-    "textToReplace": "SIMULATION_URL"
+    "name": "test_name",
+    "uri": "https://raw.githubusercontent.com/antonelepfl/testvue/master/notebooks/analysis_mnt_mooc.ipynb",
+    "txtToReplace": "SIMULATION_URL"
   },
   {
-    "analysisName": "analysis2",
-    "notebookUrl": "https://raw.githubusercontent.com/antonelepfl/testvue/master/notebooks/test_replace.ipynb",
-    "navItemName": "test_navitem2",
-    "textToReplace": "REPLACE_UUID"
+    "name": "analysis2",
+    "uri": "https://raw.githubusercontent.com/antonelepfl/testvue/master/notebooks/test_replace.ipynb",
+    "txtToReplace": "REPLACE_UUID"
   }
 ]
