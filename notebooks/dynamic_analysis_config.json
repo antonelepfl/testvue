@@ -2,11 +2,13 @@
   {
     "name": "sp6mooc",
     "uri": "https://raw.githubusercontent.com/antonelepfl/testvue/master/notebooks/analysis_mnt_mooc.ipynb",
-    "txtToReplace": "SIMULATION_URL"
+    "txtToReplace": "SIMULATION_URL",
+    "appId": 410
   },
   {
     "name": "analysis2",
     "uri": "https://raw.githubusercontent.com/antonelepfl/testvue/master/notebooks/test_replace.ipynb",
-    "txtToReplace": "REPLACE_UUID"
+    "txtToReplace": "REPLACE_UUID",
+    "appId": 410
   }
 ]
