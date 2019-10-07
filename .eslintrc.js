@@ -23,5 +23,5 @@ module.exports = {
     "comma-spacing": 1, 
     "space-before-blocks": 1, 
     "spaced-comment": 1
-  }
-}
+  },
+},
