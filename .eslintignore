@@ -3,3 +3,4 @@ config/*.js
 dist/*.js
 .vscode
 dist/*.vue
+.git
