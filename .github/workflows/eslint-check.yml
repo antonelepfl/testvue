@@ -13,8 +13,6 @@ jobs:
 
     steps:
       - uses: actions/checkout@v1
-        with:
-          fetch-depth: 1
 
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
@@ -24,13 +22,20 @@ jobs:
       - name: show location
         run: echo $(pwd)
 
+      - name: show content
+        run: ls -l $(pwd)
+
       - name: npm install
         working-directory: .
         run: npm i
+      
+      - name: eslint
+        working-directory: .
+        run: npm run lint
 
-      - name: Run ESLint
-        uses: ninosaurus/eslint-check@v5
-        with:
-          eslint-config-path: "./application/assets/js/.eslintrc.json"
-          custom-directory: "./application"
-          repo-token: ${{secrets.GITHUB_TOKEN}}
+#       - name: Run ESLint
+#         uses: ninosaurus/eslint-check@v5
+#         with:
+#           eslint-config-path: "./application/assets/js/.eslintrc.json"
+#           custom-directory: "./application"
+#           repo-token: ${{secrets.GITHUB_TOKEN}}
