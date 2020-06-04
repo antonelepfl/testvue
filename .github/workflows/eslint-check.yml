@@ -21,9 +21,12 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
 
+      - name: show location
+        run: echo $(pwd)
+
       - name: npm install
-        working-directory: ./application
-        run: npm i --ignore-scripts
+        working-directory: .
+        run: npm i
 
       - name: Run ESLint
         uses: ninosaurus/eslint-check@v5
