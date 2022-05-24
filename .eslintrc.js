@@ -24,4 +24,4 @@ module.exports = {
     "space-before-blocks": 1,
     "spaced-comment": 1
   },
-},
+}
